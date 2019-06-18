@@ -91,8 +91,8 @@
    If you'd rather not, just change the below entries to strings with
    the config you want - ie #define EXAMPLE_WIFI_SSID "mywifissid"
 */
-#define EXAMPLE_WIFI_SSID "kmwebnet"
-#define EXAMPLE_WIFI_PASS "c34rAeeS"
+#define EXAMPLE_WIFI_SSID ""
+#define EXAMPLE_WIFI_PASS ""
 
 /* FreeRTOS event group to signal when we are connected & ready to make a request */
 static EventGroupHandle_t wifi_event_group;
@@ -104,15 +104,6 @@ const int CONNECTED_BIT = BIT0;
 
 const char rootcacert[]={
 "-----BEGIN CERTIFICATE-----\n"
-"MIIBlDCCATqgAwIBAgIQXT0snwfzfj61feriSbNeVjAKBggqhkjOPQQDAjAyMREw\n"
-"DwYDVQQKDAhrbXdlYm5ldDEdMBsGA1UEAwwUanVweXRlci5rbXdlYm5ldC5jb20w\n"
-"HhcNMTkwNDE5MDE1MzQ5WhcNNDQwNDE5MDE1MzQ5WjAyMREwDwYDVQQKDAhrbXdl\n"
-"Ym5ldDEdMBsGA1UEAwwUanVweXRlci5rbXdlYm5ldC5jb20wWTATBgcqhkjOPQIB\n"
-"BggqhkjOPQMBBwNCAARpPjntwWno+/DARg9cYdPGmcJEX1Jn7fZ7HXB/T1uom5vT\n"
-"pAd3IYYnObYZJr5xook56EzeRJUMxdhbMgZxIVshozIwMDAdBgNVHQ4EFgQUKtbG\n"
-"hhdHkD82EUTH0GWZLUU71skwDwYDVR0TAQH/BAUwAwEB/zAKBggqhkjOPQQDAgNI\n"
-"ADBFAiEA1OuerIKh+u3/jL0WE92m6Za9BTUMkVFHv44qnMTmoUMCIFoY7Sgk3Sy4\n"
-"GyBIzBQcFTcInk/sf8pfNz/0pA5wAE5s\n"
 "-----END CERTIFICATE-----\n"
 };
 
@@ -307,7 +298,7 @@ static esp_err_t mqtt_event_handler(esp_mqtt_event_handle_t event)
 static void mqtt_app_start(void)
 {
     const esp_mqtt_client_config_t mqtt_cfg = {
-        .uri = "mqtts://iot.kmwebnet.com:8883",
+        .uri = "mqtts://testcorp.com:8883",
 //        .host = "",
 //        .port = ,
         .event_handle = mqtt_event_handler,
