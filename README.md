@@ -1,6 +1,6 @@
-# ECC608-httpsconnection-ioprotection
+# ECC608-mqtts-client
 
-This issues "GET" request to https server and get a responce with IO protection for ECDH premaster secret transmission, which is provided by ATECC608 capability.
+This publishes and subscribes with MQTTS with IO protection for ECDH premaster secret transmission, which is provided by ATECC608 capability.
 
 # Requirements
 
